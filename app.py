@@ -3,11 +3,11 @@ import os
 from langchain_openai import ChatOpenAI
 
 # Clé API pour OpenAI
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY", "<votre_cle_openai>")
 
 # Remplacez "<votre_cle_langsmith>" par votre clé API LangSmith
 os.environ['LANGCHAIN_TRACING_V2'] = "true"
-os.environ['LANGCHAIN_API_KEY'] = "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"
+os.environ['LANGCHAIN_API_KEY'] = os.getenv('LANGCHAIN_API_KEY', '<votre_cle_langsmith>')
 # Initialisation du modèle
 model = ChatOpenAI(
     model_name="gpt-3.5-turbo",
